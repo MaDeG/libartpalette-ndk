@@ -32,12 +32,12 @@ set(LIBARTPALETTE_SOURCES
     ${LIBARTPALETTE_ROOT}/apex/palette.cc
 )
 
-add_library(LIBARTPALETTE STATIC ${LIBARTPALETTE_SOURCES} ${ANDROID_SOURCES})
-target_include_directories(LIBARTPALETTE PUBLIC ${LIBARTPALETTE_ROOT}/include)
-target_include_directories(LIBARTPALETTE PRIVATE ${LIBARTPALETTE_ROOT})
+add_library(libartpalette STATIC ${LIBARTPALETTE_SOURCES} ${ANDROID_SOURCES})
+target_include_directories(libartpalette PUBLIC ${LIBARTPALETTE_ROOT}/include)
+target_include_directories(libartpalette PRIVATE ${LIBARTPALETTE_ROOT})
 
-set_property(TARGET LIBARTPALETTE PROPERTY CXX_STANDARD 20)
+set_property(TARGET libartpalette PROPERTY CXX_STANDARD 20)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_compile_options(LIBARTPALETTE PRIVATE $<BUILD_INTERFACE:-Wno-unknown-attributes>)
+    target_compile_options(libartpalette PRIVATE $<BUILD_INTERFACE:-Wno-unknown-attributes>)
 endif()
